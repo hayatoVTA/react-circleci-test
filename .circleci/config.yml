@@ -1,8 +1,9 @@
-version: 2
-jobs:
-  steps:
-    - checkout
-    - run: yarn install
-    - run: yarn test
+orbs:
+  node: circleci/node@4.0.0
+
+version: 2.1
+
 workflows:
-  version: 2
+  app-tests:
+    jobs:
+      - node/test
